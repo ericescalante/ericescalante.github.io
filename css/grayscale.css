@@ -45,7 +45,7 @@ p {
 }
 
 a {
-    color: #42dca3;
+    color: #0099FF;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -305,17 +305,17 @@ a:focus {
 }
 
 .btn-default {
-    border: 1px solid #42dca3;
-    color: #42dca3;
+    border: 1px solid #0099FF;
+    color: #0099FF;
     background-color: transparent;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #42dca3;
+    border: 1px solid #0099FF;
     outline: 0;
     color: #000;
-    background-color: #42dca3;
+    background-color: #0099FF;
 }
 
 ul.banner-social-buttons {
@@ -388,6 +388,16 @@ h1.brand-heading{
     font-size: 93px;
 }
 
+/* Chchchchchanges. */
 .nav>li{
     display: inline-block;
+}
+body.post{
+    background: #fff;
+    color:#000;
+}
+body.post .navbar{
+    background: #000;
+    color:#fff;
+    padding: 0;
 }
