@@ -379,8 +379,15 @@ body {
     text-align: left;
     padding-top: 85px;
 }
+#post .panel-body{
+    padding:38px;
+}
 h1.brand-heading{
     font-family: 'Josefin Sans',sans-serif;
     text-transform: none;
     font-size: 93px;
+}
+
+.nav>li{
+    display: inline-block;
 }
