@@ -9,14 +9,14 @@ title:               'Eric Escalante'
 tagline:             'Blogging gingerly'
 description:         'A simple blog about software development, and being coy about it.'
 url:                 http://ericescalante.github.io
-baseurl:             'http://ericescalante.github.io'
+baseurl:             ''
 paginate:            5
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Eric Escalante
+  url:               http://ericescalante.github.io
+  email:             ericescalante@gmail.com
 
 # Custom vars
 version:             1.0.0
