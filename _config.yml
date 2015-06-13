@@ -9,7 +9,7 @@ title:               'Eric Escalante'
 tagline:             'Blogging gingerly'
 description:         'A simple blog about software development, and being coy about it.'
 url:                 http://ericescalante.github.io
-baseurl:             ''
+baseurl:             'http://ericescalante.github.io'
 paginate:            5
 
 # About/contact
