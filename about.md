@@ -3,8 +3,8 @@ layout: page
 title: About the authors
 ---
 <div class="profiles">
-  <image src="/public/profile.jpeg" />
   <image src="/public/gatiko.jpeg" />
+  <image src="/public/profile.jpeg" />
 </div> 
 <p class="message">
   Only one of them can actually code. Both shed.
