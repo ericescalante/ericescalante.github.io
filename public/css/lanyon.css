@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 .masthead-title small {
   font-size: 75%;
   font-weight: 400;
-  color: #c0c0c0;
+  color: #FFCC99;
   letter-spacing: 0;
 }
 
@@ -560,4 +560,13 @@ a.pagination-item:hover {
 /* Only one tweak for a reverse layout */
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
+}
+
+/* Some small changes and additions */
+
+.profiles {
+  text-align: center;
+}
+.profiles  img {
+  display: inline-block;
 }

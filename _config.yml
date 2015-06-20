@@ -8,15 +8,14 @@ relative_permalinks: true
 title:               'Eric Escalante'
 tagline:             'Blogging gingerly'
 description:         'A simple blog about software development, and being coy about it.'
-url:                 ericescalante.github.io
+url:                 http://ericescalante.github.io
 baseurl:             ''
 paginate:            5
 
 # About/contact
 author:
   name:              Eric Escalante
-  url:               http://ericescalante.github.io
-  email:             ericescalante@gmail.com
+  url:               https://twitter.com/peluchio
 
 # Custom vars
 version:             1.0.0
