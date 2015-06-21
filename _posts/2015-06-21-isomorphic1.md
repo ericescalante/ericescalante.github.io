@@ -101,16 +101,14 @@ DeveloperList = React.createClass
       <div className="row">
         {profiles}
       </div>
-      <Pagination pageChanged={this.handlePagechange} currentPage={parseInt this.props.params.page}/>
+      <Pagination currentPage={parseInt this.props.params.page}/>
     </div>
 
 module.exports = DeveloperList
 {% endhighlight %}
 
-*Explanation*: It all comes together on our developer list component. Lines 1 - 4 define the dependencies for this component, the first one being react itself. Then we create a [request](https://www.npmjs.com/package/request) instance, which we'll use later on to make our call to Github's API. The last to lines create instances of our previously defined MiniProfile and Pagination components.
-Of not here, is that we have created a our data fetching function as a `static`, in order to be able to call it later on from React Router. The data resulting from this function will be passed by the router as a property of our developer list, so we can make use of it in line 21 in a `forEach` as a source to build individual MiniProfiles for each developer.
+*Explanation*: It all comes together on our developer list component. Lines 1 - 4 define the dependencies for this component, starting with React. Then we create a [request](https://www.npmjs.com/package/request) instance, which we'll use later on to make our call to Github's API. The last to lines create instances of our previously defined MiniProfile and Pagination components.
+Of note here, is that we have created our data fetching function as a `static`, in order to be able to call it later on from React Router. The data resulting from this function will be passed by the router as a property of our developer list, so we can make use of it in line 21 in a `forEach` as a source to build individual MiniProfiles for each developer in our `render` function. To finish things off, we include our Pagination component and pass the current page as a property.
 
-As a nice bonus of using React Router we have managed to create three state-less components. It's considered [a best practice](https://facebook.github.io/react/docs/thinking-in-react.html) to keep as little state as possible in your components, since every change of state triggers a new rendering of the component. As you can see, none of the components implement a `getInitialState` function and only work with the properties handed down to them from above.
 
-That's it for the first part, on the next post we'll describe the process of making these components work on the server as well!
-
+That's it for the first part, on the next post we'll describe the process hooking our developer list component to a router and making it work both on the server and the browser!

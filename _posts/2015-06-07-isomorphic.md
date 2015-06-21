@@ -22,6 +22,7 @@ For these reasons, just adding React components to the existing user interface o
 This post assumes some basic familiarity with the following:
 
 * [Node.js](https://nodejs.org/)
+* [Express](http://expressjs.com/)
 * [React](https://facebook.github.io/react/)
 * [gulp](http://gulpjs.com/)
 * [browserify](http://browserify.org/)
@@ -38,8 +39,9 @@ The series will be spread as follows:
 
 * Intro
 * [Part 1](/2015/06/21/isomorphic1/): React components
-* Part 2: Server-side rendering
-* Part 3: Rendering from PHP with dnode
+* [Part 2](/2015/06/21/isomorphic2/): Router configuration
+* [Part 3](/2015/06/21/isomorphic3/): Server-side rendering
+* [Part 4](/2015/06/21/isomorphic4/): Rendering from PHP with dnode
 
 I've created a repository with the finished app so you can download, analyze and tinker with it as you read along. 
 Please be gentle, it's my first attempt at a coding post+repo!
