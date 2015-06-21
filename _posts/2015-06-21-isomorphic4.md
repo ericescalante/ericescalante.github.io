@@ -31,7 +31,7 @@ gutil.log "dnode: Listening on port #{dnodePort}"
 
 *Explanation*: These lines come after the declaration of our `getHtml` function in the `server.coffee` script (around line 37 over there). To begin things, we declare the name of the function we want to expose via dnode, in this case `renderIndex`. When the php side of dnode calls, it will provide the parameters and a remote function to be invoked as a callback once  we're done. 
 
-Inside our `renderIndex` function, on line 4, we'll perform the now familiar task of getting a route handler for `/developers/page/` (appending the page number sent by php). Then we go ahead and invoke the handler's `fetchData` and use the resulting data to have `React.renderToString` provide the final html. Finally on line 10 we invoke the remote callback with the output our handy `getHtml` function. Bam! 
+Inside our `renderIndex` function, on line 4, we'll perform the now familiar task of getting a route handler for `/developers/page/` (appending the page number sent by php). Then we go ahead and invoke the handler's `fetchData` and use the resulting data to have `React.renderToString` provide the final html. Finally on line 10 we invoke the remote callback with the output of our handy `getHtml` function. Bam! 
 
 ### PHP index script.
 
