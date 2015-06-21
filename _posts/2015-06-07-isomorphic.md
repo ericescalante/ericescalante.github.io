@@ -5,7 +5,7 @@ title: Isomorphic React apps in a PHP CMS
 
 ## Introduction
 
-In this four-part series, we're going to cover how to go about making a PHP benefit from the use of ReactJS components both server and client-side. The case for this is, for example, if we have a Wordpress or Drupal CMS we want to keep around for it's content management functions, but want to extend with new and modern functionality.
+In this four-part series, we're going to cover how to go about making a PHP app benefit from the use of ReactJS components both server and client-side. The case for this is, for example, if we have a Wordpress or Drupal CMS we want to keep around for it's content management functions, but want to extend with new and modern functionality.
 
 Being able share some of the javascript code both on the server and client provides many advantages, such as:
 
