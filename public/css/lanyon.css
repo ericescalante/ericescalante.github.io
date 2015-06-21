@@ -570,3 +570,6 @@ a.pagination-item:hover {
 .profiles  img {
   display: inline-block;
 }
+.highlight pre{
+  font-size: 12px;
+}
