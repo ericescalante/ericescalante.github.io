@@ -24,4 +24,4 @@ title: About the authors
 )
 * Not the biggest twitter user, but can be reached at [@peluchio](https://twitter.com/peluchio)
 * Loves spicy food and chocolate, even more their occasional coming together on the same dish.
-* Member of fewer secret societies that Gatiko.
+* Member of fewer secret societies than Gatiko.
