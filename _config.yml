@@ -8,7 +8,7 @@ relative_permalinks: true
 title:               'Eric Escalante'
 tagline:             'Blogging gingerly'
 description:         'A simple blog about software development, and being coy about it.'
-url:                 http://ericescalante.github.io
+url:                 http://ericescalante.com
 baseurl:             ''
 paginate:            5
 
