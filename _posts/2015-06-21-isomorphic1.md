@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Isomorphic React apps in a PHP CMS
+comments: true
 ---
 
 ## Part 1 - React components
