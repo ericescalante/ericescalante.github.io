@@ -65,7 +65,7 @@ Pagination = React.createClass
 module.exports = Pagination
 {% endhighlight %}
 
-*Explanation* This component has two additional dependencies beside just React. On line two we create an instance of [classnames](https://www.npmjs.com/package/classnames) used to add css classnames based on a condition (not showing the left chevron on the first page in this case). The second dependency is for [Link](http://rackt.github.io/react-router/#Link) a component that comes with [react-router](https://github.com/rackt/react-router). Link will help us creating links that allow navigating through our developer list via ajax and also as traditional anchor tags when javascript is not available, as in the case of a search robot or a clunky browser. The CJSX bit just adds a 'previous' and 'next' chevrons so we can move back and forth in the list.
+*Explanation* This component has two additional dependencies beside just React. On line two we create an instance of [classnames](https://www.npmjs.com/package/classnames) used to add css classnames based on a condition (not showing the left chevron on the first page in this case). The second dependency is for [Link](http://rackt.github.io/react-router/#Link) a component that comes with [react-router](https://github.com/rackt/react-router). Link will help us creating links that allow updating the browser's url while navigating through our developer list via ajax and also work as traditional anchor tags when javascript is not available, as in the case of a search robot or a clunky browser. The CJSX bit just adds a 'previous' and 'next' chevrons so we can move back and forth in the list.
 
 Note: the `params` parameter on lines 14 and 18 should have double curly brackets but [jekyll](http://jekyllrb.com/) says no. 
 
