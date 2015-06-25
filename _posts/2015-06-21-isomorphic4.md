@@ -6,7 +6,7 @@ comments: true
 {{ page.comments }}
 ## Part 4 - Rendering from PHP with dnode
 
-Or Ruby, or Java. Heck, even perl! Our proud little app can inegrate with any language that has a dnode implementation! 
+Or Ruby, or Java. Heck, even perl! Our proud little app can integrate with any language that has a dnode implementation! 
 
 When installing the php dnode package with composer, I was surprised to find installed a [React](http://reactphp.org/) dependency that actually has nothing to do with facebook's! It seems to be a great library for evented i/o for php.
 
@@ -82,11 +82,11 @@ Inside our `renderIndex` function, on line 4, we'll perform the now familiar tas
 
 {% endhighlight %}
 
-*Explanation*: The markup is just a simple html page, but close your eyes for a second and picture this embedded on a large, living app. 
+*Explanation*: The markup is just a simple html page, but close your eyes for a second and picture this implemented properly on a large, living app. 
 
 The magic starts at line 26, where we tell our dnode php instance to connect to port 3001, the one we defined in our node server script as `dnodePort = 3001`. This gives us a `$remote` object from which we can make calls to functions implemented on the other side of this funny wormhole, back in node. 
 
-So, when we do `$remote->renderIndex` that `renderIndex` is the one we just defined on server.coffee a couple of paragraphs above! When I saw this running the first time my mind was totally blown! (yes, I know I need to have more fun). 
+So, when we do `$remote->renderIndex` that `renderIndex` is the function we just defined on server.coffee a couple of paragraphs above! When I saw this running the first time my mind was totally blown (away)! (yes, I know I need to have more fun). 
 
 Next, we just pass the current page inside an `$options` array and get back a `$result` variable containing the output of the node app, including a link to our `bundle.js` that includes the browser-side react-routing code! 
 

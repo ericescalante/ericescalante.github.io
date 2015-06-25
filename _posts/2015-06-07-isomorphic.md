@@ -14,7 +14,7 @@ Being able share some of the javascript code both on the server and client provi
 - Performance: A pre-rendered page can be cached server-side and provide a snappy user experience. React hooks itself up once the page is served and takes over the rendering of it's components based on user interactions.
 - Compatibility: A browser with no javascript enabled can still display the page and allow for a simple navigation.
 - Usability: A user is be able to bookmark the current state of the page and is able to return to it or share it.
-- Maintainability: Sharing code between the server and browser, allows for a smaller code base, which is easier to keep healthy.
+- Maintainability: Sharing code between the server and the browser, allows for a smaller code base, which is easier to keep healthy.
 
 For these reasons, just adding React components to the existing user interface of our CMS would prevent us from reaping the full benefits, even though it would still provide our application with the reduced development times, maintainability and faster response time that React brings to the table.
 

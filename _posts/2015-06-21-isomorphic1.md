@@ -112,4 +112,4 @@ module.exports = DeveloperList
 Of note here, is that we have created our data fetching function as a `static`, in order to be able to call it later on from React Router. The data resulting from this function will be passed by the router as a property of our developer list, so we can make use of it in line 21 in a `forEach` as a source to build individual MiniProfiles for each developer in our `render` function. To finish things off, we include our Pagination component and pass the current page as a property.
 
 
-That's it for the first part, on the next post we'll describe the process hooking our developer list component to a router and making it work both on the server and the browser!
+That's it for the first part, on the next post we'll go over the process hooking our developer list component to a router and making it work both on the server and the browser!

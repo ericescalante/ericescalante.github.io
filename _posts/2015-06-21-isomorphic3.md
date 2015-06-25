@@ -49,9 +49,9 @@ getHtml = (reacOutput, data, state) ->
   response +=  "<script src='http://localhost:#{regularPort}/js/bundle.js'></script>"
 {% endhighlight %}
 
-*Feeble attempt at an explanation*: Ok, let's take this one thing at a time. We start first by registering the coffee-react module in order to be able to require `.coffee` and `.cjsx` files later on. Next up, we include our routes definition and set up a simple Express app. Finally we declare two variables that will tell node and dnode on which ports they should listen for connections.
+*Feeble attempt at an explanation*: Ok, let's take this one step at a time. We start first by registering the coffee-react module in order to be able to require `.coffee` and `.cjsx` files later on. Next up, we include our routes definition and set up a simple Express app. Finally we declare two variables that will tell node and dnode on which ports they should listen for connections.
 
-On our Express app instance, we will define a function to handle GET requests to `/developers/page/*`. This function creates a react-router instance created using the current `req.url` and our routes configuration (line 15). On the next line we invoke the `run` function on our router instance and obtain the react component that will handle the route  and the current route state (params).
+On our Express app instance, we will define a function to handle GET requests to `/developers/page/*`. This function returns a react-router instance created using the current `req.url` and our routes configuration (line 15). On the next line we invoke the `run` function on our router instance and obtain the react component that will handle the route  and the current route state (params).
 
 On line 19 we invoke the static function we coded into our DeveloperList component (`FetchData`, remember?) and pass a callback function to act upon the resulting data from the request to Github's API.
 
@@ -61,7 +61,7 @@ We wrap things up on line 21 by sending the output of our `getHtml` function as 
 
 ### Browser logic
 
-We  now have a working server and router to handle the initial request of a user. But we also need to configure our router to handle requests done once the page has been served, and do this without bothering the `server.coffee` script. We need now a `browser.cofee` script!
+We  now have a working server and router to handle the initial request of a user. But we also need to configure our router to handle requests done once the page has been served, and do this without bothering the `server.coffee` script. We need now a `browser.coffee` script!
 
 
 {% highlight coffeescript linenos %}
@@ -81,7 +81,7 @@ Router.run routes, Router.HistoryLocation, (Handler, state) ->
 
 *Explanation*: Thanks Cthulhu and all the Great Old Ones, things get more simple from now on. Ish. The first three lines should look familiar by now, so we can move along. On line 5 we create once again a router instance but this time we pass the browser url provided by `Router.HistoryLocation` together with our routes definition.
 
-We need to tell react to render the resulting Handler (our trusty developers list) using either the JSON data that comes already hardcoded on the page thanks to node, or to do a new call to Github's API, in order to avoid doing an unnecessary request the first time. That little if on line 6 makes sure of just that. So, if it's the first render of the page, we just invoke `React.render` with the data present, otherwise we make a call to the `fetchData` function of our Handler and use the result of that as the data to be rendered. I still feel there must be a better way to handle this scenario. Looking forward to improving that!
+We need to tell react to render the resulting Handler (our trusty developers list) using either the JSON data that comes already hardcoded on the page thanks to node, or to do a new call to Github's API, in order to avoid doing an unnecessary request the first time. That little if on line 6 makes sure of just that. So, when it's the first render of the page, we just invoke `React.render` with the data present, otherwise we make a call to the `fetchData` function of our Handler and use the result of that as the data to be rendered. I still feel there must be a better way to handle this scenario. Looking forward to improving on that!
 
 That's it! We have a this point an isomorphic/universal/$nextTrendyName node app, that makes use of the same react components on both the server and the client! It's Sunday and it's sunny outside, so time to head out and walk a bit in the sun. But first, let's hook all of this up to PHP. 
 
