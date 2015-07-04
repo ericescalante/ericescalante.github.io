@@ -95,7 +95,7 @@ Inside our `renderIndex` function, on line 2, we'll perform the now familiar tas
 
 The magic starts at line 26, where we tell our dnode php instance to connect to port 3001, the one we defined in our node server script as `dnodePort = 3001`. This gives us a `$remote` object from which we can make calls to functions implemented on the other side of this funny wormhole, back in node. 
 
-So, when we do `$remote->renderIndex` that `renderIndex` is the function we just defined on server.coffee a couple of paragraphs above! When I saw this running the first time my mind was totally blown (away)! - yes, I know I need to go out more. 
+So, when we do `$remote->renderIndex` that `renderIndex` is the function we just defined on our server script a couple of paragraphs above! When I saw this running the first time my mind was totally blown (away)! - yes, I know I need to go out more. 
 
 Next, we just pass the current page inside an `$options` array and get back a `$result` variable containing the output of the node app, including a link to our `bundle.js` that includes the browser-side react-routing code! 
 

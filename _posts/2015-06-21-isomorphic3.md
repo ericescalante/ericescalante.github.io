@@ -71,7 +71,7 @@ We wrap things up on line 28 by sending the output of our `getHtml` function as 
 
 ### Browser logic
 
-We  now have a working server and router to handle the initial request of a user. But we also need to configure our router to handle requests done once the page has been served, and do this without bothering the `server.coffee` script. We need now a `browser` script!
+We  now have a working server and router to handle the initial request of a user. But we also need to configure our router to handle requests done once the page has been served, and do this without bothering the `server` script. We need now a `browser` script!
 
 
 {% highlight javascript linenos %}
