@@ -28,6 +28,7 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
+    <script src="/public/kudos/kudosplease-min.js"></script>
     <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
@@ -44,6 +45,16 @@
           checkbox.checked = false;
         }, false);
       })(document);
+      new KudosPlease({ 
+          el : '.kudos',
+          duration : 1500,
+          persistent : true,
+          status : {
+            alpha: 'fontelico-emo-shoot',
+            beta: 'fontelico-emo-shoot',
+            gamma: 'fontelico-emo-beer'
+          }
+      });
     </script>
   </body>
 </html>
