@@ -60,6 +60,12 @@ var Pagination = React.createClass({
     var buttonCss = {margin: 5};
     var prevPage = {page: this.props.currentPage - 1};
     var nextPage = {page: this.props.currentPage + 1};
+    var prevClasses = cx({
+      'glyphicon': true,
+      'glyphicon-chevron-left': true,
+      'btn btn-primary': true,
+      'hidden': this.props.currentPage === 1
+    });
     return (
       <div className="row clearfix text-center" style={linkCss}>
         <Link to="index" params={prevPage} style={buttonCss}>
