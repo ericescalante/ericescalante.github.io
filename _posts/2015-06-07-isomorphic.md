@@ -10,7 +10,7 @@ In this four-part series, we're going to cover how to go about making a PHP app 
 
 Being able share some of the javascript code both on the server and client provides many advantages, such as:
 
-- SEO: Search engines should be able crawl and index our content. No need to implement/pay for a pre-rendering service to achieve this.
+- SEO: Search engines should be able to crawl and index our content. No need to implement/pay for a pre-rendering service to achieve this.
 - Performance: A pre-rendered page can be cached server-side and provide a snappy user experience. React hooks itself up once the page is served and takes over the rendering of it's components based on user interactions.
 - Compatibility: A browser with no javascript enabled can still display the page and allow for a simple navigation.
 - Usability: A user is be able to bookmark the current state of the page and is able to return to it or share it.
