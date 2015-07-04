@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Isomorphic React apps in a PHP CMS - 1
+title: Isomorphic React apps in PHP via dnode - 1
 comments: true
 ---
 
