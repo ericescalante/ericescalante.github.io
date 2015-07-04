@@ -1,81 +1,98 @@
 ---
 layout: post
-title: Isomorphic React apps in a PHP CMS
+title: Isomorphic React apps in a PHP CMS - 3
 comments: true
 ---
 
 ## Part 3 - Server and client-side rendering
 
-Now the plot begins to thicken. It's time now to work a little bit on the backend, behind the courtains. 
+Now the plot begins to thicken. It's time to work a little bit on the backend, behind the courtains. 
 
 ### Node.js server
 
-{% highlight coffeescript linenos %}
-require 'coffee-react/register'
-React = require 'react'
-Router = require 'react-router'
-routes = require './routes'
-dnode = require 'dnode'
-express = require 'express'
-app = express()
-gutil = require 'gulp-util'
+{% highlight javascript linenos %}
+var React = require('react');
+var Router = require('react-router');
+var routes = require('./routes');
+var dnode = require('dnode');
+var express = require('express');
+var app = express();
+var gutil = require('gulp-util');
 
-regularPort = 3000
-dnodePort = 3001
+regularPort = 3000;
+dnodePort = 3001;
 
-# HTTP server
-app.get '/developers/page/*', (req, res) ->
-  router = Router.create location: req.url, routes: routes
-  router.run (Handler, state) ->
-      gutil.log "Serving to browser via #{regularPort}"
-      component = state.routes[1].handler
-      component.fetchData state.params, (err, data) ->
-        reacOutput = React.renderToString(React.createElement(Handler, data: data, params: state.params))        
-        res.send(getHtml(reacOutput, data, state))
+app.get('/developers/page/*', function(req, res) {
+  var router = Router.create({
+    location: req.url,
+    routes: routes
+  });
+  return router.run(function(Handler, state) {
+    gutil.log("Serving to browser via " + regularPort);
+    var component = state.routes[1].handler;
+    return component.fetchData(state.params, function(err, data) {
+      var reactOutput = React.renderToString(React.createElement(Handler, {
+        data: data,
+        params: state.params
+      }));
+      return res.send(getHtml(reactOutput, data, state));
+    });
+  });
+});
 
-#static files
-app.use express.static __dirname+'/public'
+app.use(express["static"](__dirname + '/public'));
 
-server = app.listen regularPort, ->
-  gutil.log "HTTP: Listening on port #{regularPort}"
+server = app.listen(regularPort, function() {
+  return gutil.log("HTTP: Listening on port " + regularPort);
+});
 
-getHtml = (reacOutput, data, state) ->
-  response = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">'
-  response += "<script>window.reactData = #{JSON.stringify(data)}</script>"
-  response += "<script>window.initialPage = #{state.params.page}</script>"
-  response += '<div id="app" class="container">'
-  response += reacOutput
-  response += '</div>'
-  response +=  "<script src='http://localhost:#{regularPort}/js/bundle.js'></script>"
+getHtml = function(reactOutput, data, state) {
+  var response;
+  response = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">';
+  response += "<script>window.reactData = " + (JSON.stringify(data)) + "</script>";
+  response += "<script>window.initialPage = " + state.params.page + "</script>";
+  response += '<div id="app" class="container">';
+  response += reactOutput;
+  response += '</div>';
+  return response += "<script src='http://localhost:" + regularPort + "/js/bundle.js'></script>";
+};
+
 {% endhighlight %}
 
-*Feeble attempt at an explanation*: Ok, let's take this one step at a time. We start first by registering the coffee-react module in order to be able to require `.coffee` and `.cjsx` files later on. Next up, we include our routes definition and set up a simple Express app. Finally we declare two variables that will tell node and dnode on which ports they should listen for connections.
+*Feeble attempt at an explanation*: Ok, let's take this one step at a time. We start first by including our routes definition and setting  up a simple Express app. Finally we declare two variables that will tell node and dnode on which ports they should listen for connections.
 
-On our Express app instance, we will define a function to handle GET requests to `/developers/page/*`. This function returns a react-router instance created using the current `req.url` and our routes configuration (line 15). On the next line we invoke the `run` function on our router instance and obtain the react component that will handle the route  and the current route state (params).
+On our Express app instance, we will define a function to handle GET requests to `/developers/page/*`. This function returns a react-router instance created using the current `req.url` and our routes configuration (line 12). Next we invoke the `run` function on our router instance and obtain the react component that will handle the route  and the current route state (params).
 
-On line 19 we invoke the static function we coded into our DeveloperList component (`FetchData`, remember?) and pass a callback function to act upon the resulting data from the request to Github's API.
+On line 22 we invoke the static function we coded into our DeveloperList component (`FetchData`, remember?) and pass a callback function to act upon the resulting data from the request to Github's API.
 
-On line 20 we invoke React's `renderToString` method passing our DeveloperList component (represented by the `Handler` variable), the resulting data from `fetchData`, and finally the `state.params` provided by react router (page: 1 in this case). The resulting HTML we pass to a custom function called `getHtml`  that will set the data as JSON object in the page so react can use it the first time. This function also includes bootstrap and more importantly, the `bundle.js` file generated by browserify. All this unwholesome HTML concatenatin' can be replaced with a jade template for example, but just wanted to keep it all server stuff on a single file for this post :)
+On line 24 we invoke React's `renderToString` method passing our DeveloperList component (represented by the `Handler` variable), the resulting data from `fetchData`, and finally the `state.params` provided by react router (page: 1 in this case). The resulting HTML we pass to a custom function called `getHtml`  that will set the data as JSON object in the page so react can use it the first time. This function also includes bootstrap and more importantly, the `bundle.js` file generated by browserify. All this unwholesome HTML concatenatin' can be replaced with a jade template for example, but just wanted to keep it all server stuff on a single file for this post :)
 
-We wrap things up on line 21 by sending the output of our `getHtml` function as the response from our express app back to the browser.
+We wrap things up on line 28 by sending the output of our `getHtml` function as the response from our express app back to the browser.
 
 ### Browser logic
 
-We  now have a working server and router to handle the initial request of a user. But we also need to configure our router to handle requests done once the page has been served, and do this without bothering the `server.coffee` script. We need now a `browser.coffee` script!
+We  now have a working server and router to handle the initial request of a user. But we also need to configure our router to handle requests done once the page has been served, and do this without bothering the `server.coffee` script. We need now a `browser` script!
 
 
-{% highlight coffeescript linenos %}
-React = require 'react'
-Router = require 'react-router'
-routes = require './routes'
+{% highlight javascript linenos %}
+var React = require('react');
+var Router = require('react-router');
+var routes = require('./routes');
 
-Router.run routes, Router.HistoryLocation, (Handler, state) ->
-  if window.initialPage == parseInt state.params.page
-    React.render <Handler data={window.reactData} params={state.params}/>, document.getElementById('app')
-  else
-    component = state.routes[1].handler
-    component.fetchData state.params, (err, data) ->
-      React.render <Handler data={data} params={state.params}/>, document.getElementById('app')
+Router.run(routes, Router.HistoryLocation, function(Handler, state) {
+  if (window.initialPage === parseInt(state.params.page)) {
+    return React.render(
+      <Handler data={window.reactData} params={state.params}/>, document.getElementById('app')
+    );
+  } else {
+    var component = state.routes[1].handler;
+    return component.fetchData(state.params, function(err, data) {
+      React.render(
+      <Handler data={data} params={state.params}/>, document.getElementById('app')
+      );
+    });
+  }
+});
 
 {% endhighlight %}
 
