@@ -56,13 +56,17 @@
             gamma: 'fontelico-emo-beer'
           }
       });
-    links = document.getElementsByClassName('repo');
-    for(var i=0; i<links.length; i++){
-      links[i].addEventListener('click', function(){
-        ga('send', 'event', 'link', 'click', 'sample app repo');
-      });
+    function trackLink(className, event){
+      links = document.getElementsByClassName(className);
+      for(var i=0; i<links.length; i++){
+        links[i].addEventListener('click', function(){
+          ga('send', 'event', 'link', 'click', event);
+        });
+      }
     }
-
+    trackLink('repo', 'sample app repo');
+    trackLink('linkedin', 'linkedin profile');
+    trackLink('twitter', 'twitter profile');
     </script>
   </body>
 </html>

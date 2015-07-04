@@ -20,8 +20,9 @@ title: About the authors
 
 * Born in Mexico, raised in Panama
 * Moved to Europe in 2006
-* For cv, etc. please visit [linkedin profile](https://uk.linkedin.com/pub/eric-escalante/2b/264/6a4
-)
-* Not the biggest twitter user, but can be reached at [@peluchio](https://twitter.com/peluchio)
-* Loves spicy food and chocolate, even more their occasional coming together on the same dish
+* For cv, etc. please visit <a href="https://uk.linkedin.com/pub/eric-escalante/2b/264/6a4" class='linkedin' target="_blank">my linkedin profile</a>
+
+* Not the biggest twitter user, but can be reached at <a href="https://twitter.com/peluchio" class='twitter' target="_blank">@peluchio</a>
+
+* Loves to code, spicy foods and chocolate, even more their occasional coming together on the same dish
 * Member of fewer secret societies than Gatiko
