@@ -24,5 +24,5 @@ title: About the authors
 
 * Not the biggest twitter user, but can be reached at <a href="https://twitter.com/peluchio" class='twitter' target="_blank">@peluchio</a>
 
-* Loves to code, spicy foods and chocolate, even more their occasional coming together on the same dish
+* Loves to code, spicy food and chocolate. Even more their occasional coming together on the same dish
 * Member of fewer secret societies than Gatiko
