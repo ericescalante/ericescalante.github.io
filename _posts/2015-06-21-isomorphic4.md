@@ -3,7 +3,7 @@ layout: post
 title: Isomorphic React apps in a PHP CMS
 comments: true 
 ---
-{{ page.comments }}
+
 ## Part 4 - Rendering from PHP with dnode
 
 Or Ruby, or Java. Heck, even perl! Our proud little app can integrate with any language that has a dnode implementation! 
