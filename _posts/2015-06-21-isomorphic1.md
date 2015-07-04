@@ -6,7 +6,7 @@ comments: true
 
 ## Part 1 - React components
 
-In this section we'll cover the react components, please make sure you have checked out the [sample repo](https://github.com/ericescalante/isomorphic-post-code) so you can run the code as you read.
+In this section we'll cover the react components, please make sure you have checked out the <a href="https://github.com/ericescalante/isomorphic-post-code" class='repo' target="_blank">sample repo</a> so you can run the code as you read.
 
 The application will implement three react components: a developer list, a mini profile and a pager. 
 

@@ -45,6 +45,7 @@
           checkbox.checked = false;
         }, false);
       })(document);
+
       new KudosPlease({ 
           el : '.kudos',
           duration : 1500,
@@ -55,6 +56,13 @@
             gamma: 'fontelico-emo-beer'
           }
       });
+    links = document.getElementsByClassName('repo');
+    for(var i=0; i<links.length; i++){
+      links[i].addEventListener('click', function(){
+        ga('send', 'event', 'link', 'click', 'sample app repo');
+      });
+    }
+
     </script>
   </body>
 </html>

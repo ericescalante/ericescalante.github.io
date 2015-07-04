@@ -104,4 +104,4 @@ Our PHP app now serves pre-rendered react components! Once the page is ready, al
 ### We made it!
 This ends this short series and I hope it was fun and useful for people learning node, gulp, react, and curious about remote procedure calls, etc. 
 
-Don't forget to check out the [repo](https://github.com/ericescalante/isomorphic-post-code) and get in touch with suggestions, questions, or complaints about my cat sneaking into your balcony and causing mischief!
+Don't forget to check out the <a href="https://github.com/ericescalante/isomorphic-post-code" class='repo' target="_blank">repo</a> and get in touch with suggestions, questions, or complaints about my cat sneaking into your balcony and causing mischief!

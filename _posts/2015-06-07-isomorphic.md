@@ -46,6 +46,6 @@ The series will be spread as follows:
 
 I've created a repository with the finished app so you can download, analyze and tinker with it as you read along. 
 Please be gentle, it's my first attempt at a coding post+repo!
-You can find it at: [ericescalante/isomorphic-post-code](https://github.com/ericescalante/isomorphic-post-code)
+You can find it at: <a href="https://github.com/ericescalante/isomorphic-post-code" class='repo' target="_blank">ericescalante/isomorphic-post-code</a>
 
 
