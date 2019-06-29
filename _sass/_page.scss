@@ -239,10 +239,6 @@ a, a:visited {
 		max-width: 960px;
 	}
 
-	a {
-		color: #fff;
-		text-decoration: none;
-	}
 }
 
 /* 
@@ -265,7 +261,7 @@ a, a:visited {
 		}
 	}
 
-	.tag {
+	.tag, .tag:visited {
 		display: inline-block;
 		margin: 4px;
 		color: #fff;
