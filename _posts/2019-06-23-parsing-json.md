@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Parsing ginormous JSON files via jq streaming 
-tags: [jq, JSON]
+tags: [jq, ruby, JSON]
 comments: true
 ---
 
