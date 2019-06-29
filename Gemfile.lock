@@ -246,10 +246,6 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll
-  jekyll-feed
-  jekyll-gist
-  jekyll-paginate
-  jekyll-sitemap
   tzinfo-data
 
 BUNDLED WITH
