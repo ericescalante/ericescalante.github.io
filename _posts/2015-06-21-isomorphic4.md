@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Isomorphic React apps in PHP via dnode - 4
+tags: [react, node, php]
 comments: true 
 ---
 
@@ -8,9 +9,9 @@ comments: true
 
 Or Ruby, or Java. Heck, even perl! Our proud little app can integrate with any language that has a dnode implementation! 
 
-When installing the php dnode package with composer, I was surprised to find installed a [React](http://reactphp.org/) dependency that actually has nothing to do with facebook's! It seems to be a great library for evented i/o for php.
+When installing the php dnode package with composer, I was surprised to find installed a [React](http://reactphp.org/){:target="_blank"} dependency that actually has nothing to do with facebook's! It seems to be a great library for evented i/o for php.
 
-Also, when I first attempted this experiment, I tried using [Facebook's php library based on v8](https://github.com/reactjs/react-php-v8js) or straight [php v8](http://php.net/manual/en/book.v8js.php) but it soon became obvious that another solution was needed.
+Also, when I first attempted this experiment, I tried using [Facebook's php library based on v8](https://github.com/reactjs/react-php-v8js){:target="_blank"} or straight [php v8](http://php.net/manual/en/book.v8js.php){:target="_blank"} but it soon became obvious that another solution was needed.
 
 ### In our node server
 {% highlight javascript linenos %}
@@ -104,4 +105,4 @@ Our PHP app now serves pre-rendered react components! Once the page is ready, al
 ### We made it!
 This ends this short series and I hope it was fun and useful for people learning node, gulp, react, and curious about remote procedure calls, etc. 
 
-Don't forget to check out the <a href="https://github.com/ericescalante/isomorphic-post-code" class='repo' target="_blank">repo</a> and get in touch with suggestions, questions, or complaints about my cat sneaking into your balcony and causing mischief!
+Don't forget to check out the [repo](https://github.com/ericescalante/isomorphic-post-code){:target="_blank"} and get in touch with suggestions, questions, or complaints about my cat sneaking into your balcony and causing mischief!

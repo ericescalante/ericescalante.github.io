@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Isomorphic React apps in PHP via dnode
+tags: [react, node, php]
 comments: true
 ---
 
@@ -22,13 +23,13 @@ For these reasons, just adding React components to the existing user interface o
 
 This post assumes some basic familiarity with the following:
 
-* [Node.js](https://nodejs.org/)
-* [Express](http://expressjs.com/)
-* [React](https://facebook.github.io/react/)
-* [gulp](http://gulpjs.com/)
-* [browserify](http://browserify.org/)
-* [php](http://php.net/) 
-* [composer](https://getcomposer.org/)
+* [Node.js](https://nodejs.org/){:target="_blank"}
+* [Express](http://expressjs.com/){:target="_blank"}
+* [React](https://facebook.github.io/react/){:target="_blank"}
+* [gulp](http://gulpjs.com/){:target="_blank"}
+* [browserify](http://browserify.org/){:target="_blank"}
+* [php](http://php.net/){:target="_blank"} 
+* [composer](https://getcomposer.org/){:target="_blank"}
 
 Edit: [07/04/2015] Replaced coffeescript snippets with regular javascript (ES5) based on feedback from my good friend Luke :)
   
@@ -39,13 +40,13 @@ The goal of our brave little sample app is to connect to Github's API and fetch 
 The series will be spread as follows:
 
 * Intro
-* [Part 1](/2015/06/21/isomorphic1/): React components
-* [Part 2](/2015/06/21/isomorphic2/): Router configuration
-* [Part 3](/2015/06/21/isomorphic3/): Server-side rendering
-* [Part 4](/2015/06/21/isomorphic4/): Rendering from PHP with dnode
+* [Part 1](/isomorphic1/): React components
+* [Part 2](/isomorphic2/): Router configuration
+* [Part 3](/isomorphic3/): Server-side rendering
+* [Part 4](/isomorphic4/): Rendering from PHP with dnode
 
 I've created a repository with the finished app so you can download, analyze and tinker with it as you read along. 
 Please be gentle, it's my first attempt at a coding post+repo!
-You can find it at: <a href="https://github.com/ericescalante/isomorphic-post-code" class='repo' target="_blank">ericescalante/isomorphic-post-code</a>
+You can find it at [this repo](https://github.com/ericescalante/isomorphic-post-code){:target="_blank"}.
 
 

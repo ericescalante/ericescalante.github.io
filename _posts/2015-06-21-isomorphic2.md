@@ -25,6 +25,6 @@ module.exports = [
 
  The `ignoreScrollBehavior` is a handy little parameter that prevents the browser from scrolling up when a user clicks on our pagination links. The page paramater will later tickle down via `state.params.page` to the `props` object of our react components.
 
-As a nice bonus of using React Router we have managed to create three *state-less components*. It's considered [a best practice](https://facebook.github.io/react/docs/thinking-in-react.html) to keep as little state as possible in your components, since every change of state triggers a new rendering of the component. As you can see, none of the components implement a `getInitialState` function and only work with the `props` handed down to them from above.
+As a nice bonus of using React Router we have managed to create three *state-less components*. It's considered [a best practice](https://facebook.github.io/react/docs/thinking-in-react.html){:target="_blank"} to keep as little state as possible in your components, since every change of state triggers a new rendering of the component. As you can see, none of the components implement a `getInitialState` function and only work with the `props` handed down to them from above.
 
 Later on, we'll include this route definition script in our `server` script and `browser` script files in order to process urls coming via http requests and browser locations respectively.

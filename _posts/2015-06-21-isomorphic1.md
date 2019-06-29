@@ -1,18 +1,19 @@
 ---
 layout: post
 title: Isomorphic React apps in PHP via dnode - 1
+tags: [react, node, php]
 comments: true
 ---
 
 ## Part 1 - React components
 
-In this section we'll cover the react components, please make sure you have checked out the <a href="https://github.com/ericescalante/isomorphic-post-code" class='repo' target="_blank">sample repo</a> so you can run the code as you read.
+In this section we'll cover the react components, please make sure you have checked out the [sample repo](https://github.com/ericescalante/isomorphic-post-code){:target="_blank"} so you can run the code as you read.
 
 The application will implement three react components: a developer list, a mini profile and a pager. 
 
 ### MiniProfile
 <div class="profiles">
-  <image src="/public/miniprofile.png" style="width:100px;"/>
+  <image src="/images/miniprofile.png" style="width:100px;"/>
 </div> 
 
 {% highlight html linenos %}
@@ -45,7 +46,7 @@ Finally, we export our MiniProfile so it's available for inclusion on other scri
 
 ### Pagination
 <div class="profiles">
-  <image src="/public/pagination.png" style="width:100px;"/>
+  <image src="/images/pagination.png" style="width:100px;"/>
 </div> 
 
 {% highlight html linenos %}
@@ -83,12 +84,10 @@ var Pagination = React.createClass({
  
 {% endhighlight %}
 
-*Explanation* This component has two additional dependencies beside just React. On line 2 we create an instance of [classnames](https://www.npmjs.com/package/classnames) used to add css classnames based on a condition (not showing the left chevron on the first page in this case). The second dependency is for [Link](http://rackt.github.io/react-router/#Link) a component that comes with [react-router](https://github.com/rackt/react-router). Link will help us creating links that allow updating the browser's url while navigating through our developer list via ajax and also work as traditional anchor tags when javascript is not available, as in the case of a search robot or a clunky browser. The JSX bit just adds a 'previous' and 'next' chevrons so we can move back and forth in the list.
+*Explanation* This component has two additional dependencies beside just React. On line 2 we create an instance of [classnames](https://www.npmjs.com/package/classnames){:target="_blank"} used to add css classnames based on a condition (not showing the left chevron on the first page in this case). The second dependency is for [Link](http://rackt.github.io/react-router/#Link){:target="_blank"} a component that comes with [react-router](https://github.com/rackt/react-router){:target="_blank"}. Link will help us creating links that allow updating the browser's url while navigating through our developer list via ajax and also work as traditional anchor tags when javascript is not available, as in the case of a search robot or a clunky browser. The JSX bit just adds a 'previous' and 'next' chevrons so we can move back and forth in the list.
 
 ### Developer list
-<div class="profiles">
-  <image src="/public/developerlist.png" style="width:600px;"/>
-</div> 
+<image src="/images/developerlist.png" style="width:600px;"/>
 
 {% highlight html linenos %}
 var React = require('react');
@@ -133,7 +132,7 @@ var DeveloperList = React.createClass({
 module.exports = DeveloperList;
 {% endhighlight %}
 
-*Explanation*: It all comes together on our developer list component. Lines 1 - 4 define the dependencies for this component, starting with React. Then we create a [request](https://www.npmjs.com/package/request) instance, which we'll use later on to make our call to Github's API. The last to lines create instances of our previously defined MiniProfile and Pagination components.
+*Explanation*: It all comes together on our developer list component. Lines 1 - 4 define the dependencies for this component, starting with React. Then we create a [request](https://www.npmjs.com/package/request){:target="_blank"} instance, which we'll use later on to make our call to Github's API. The last to lines create instances of our previously defined MiniProfile and Pagination components.
 Of note here, is that we have created our data fetching function as a `static`, in order to be able to call it later on from React Router. The data resulting from this function will be passed by the router as a property of our developer list, so we can make use of it in line 26 in a `forEach` as a source to build individual MiniProfiles for each developer in our `render` function. To finish things off, we include our Pagination component and pass the current page as a property.
 
 
