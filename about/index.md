@@ -3,8 +3,8 @@ layout: page
 title: About the authors
 image:
   feature: background.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+  credit: 
+  creditlink:
 comments: false
 modified: 2019-06-29
 ---
