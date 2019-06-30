@@ -1,6 +1,6 @@
 title:            Eric Escalante
 description:      P
-disqus_shortname: 
+disqus_shortname: ericescalante
 reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
@@ -26,7 +26,7 @@ owner:
   google_plus:
 
 # Background image to be tiled on all pages
-background: light_toast.pngx§
+background: light_toast.png
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
